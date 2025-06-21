@@ -26,3 +26,10 @@ Team Roles:
 - Database Administrator: Manages database design, indexing, and optimizations.
 - DevOps Engineer: Handles deployment, monitoring, and scaling of the backend services.
 - QA Engineer: Ensures the backend functionalities are thoroughly tested and meet quality standards.
+
+Database Design:
+- Users: Users of the app can have multiple properties to book and view, make reviews of them and make payments for the desired booking.
+- Properties: The properties on the app will enable users to make bookings or advertise to potential clients, have reviews on the quality of the properties and have payment methods.
+- Bookings: Users will be able to view their bookings and the properties attached to them plus the reviews of the properties.
+- Reviews: Each property will have reviews attached to it to enable users to see the quality of the property and to review for themselves. 
+- Payments: For each booking, users will be able to make payments regarding the different packages offered depending on the stay.
