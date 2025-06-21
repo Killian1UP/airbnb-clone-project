@@ -33,3 +33,11 @@ Database Design:
 - Bookings: Users will be able to view their bookings and the properties attached to them plus the reviews of the properties.
 - Reviews: Each property will have reviews attached to it to enable users to see the quality of the property and to review for themselves. 
 - Payments: For each booking, users will be able to make payments regarding the different packages offered depending on the stay.
+
+Feature Breakdown:
+1. User Management: Implement a secure system for user registration, authentication, and profile management. It will enable users to register new users, authenticate, and manage user profiles.
+2. Property Management: Develop features for property listing creation, updates, and retrieval.
+3. Booking System: Create a booking mechanism for users to reserve properties and manage booking details. Make, update, and manage bookings, including check-in and check-out details.
+4. Payment Processing: Integrate a payment system to handle transactions and record payment details. It will enable the app to handle payment transactions related to bookings.
+5. Review System: Allow users to leave reviews and ratings for properties.
+6. Data Optimization: Ensure efficient data retrieval and storage through database optimizations. By the use of indexing and caching.
