@@ -28,11 +28,84 @@ Team Roles:
 - QA Engineer: Ensures the backend functionalities are thoroughly tested and meet quality standards.
 
 Database Design:
-- Users: Users of the app can have multiple properties to book and view, make reviews of them and make payments for the desired booking.
-- Properties: The properties on the app will enable users to make bookings or advertise to potential clients, have reviews on the quality of the properties and have payment methods.
-- Bookings: Users will be able to view their bookings and the properties attached to them plus the reviews of the properties.
-- Reviews: Each property will have reviews attached to it to enable users to see the quality of the property and to review for themselves. 
-- Payments: For each booking, users will be able to make payments regarding the different packages offered depending on the stay.
+The Airbnb Clone backend is built around several core entities. Each entity represents a table in the database, with defined relationships to ensure data consistency and integrity.
+
+1. Users
+Represents both guests and hosts who use the platform.
+Key Fields:
+- id: Unique identifier for the user.
+- username: User's chosen username.
+- email: User's email address.
+- password: Hashed password for authentication.
+- is_host: Boolean flag indicating if the user can list properties.
+
+Relationships:
+- A user can own multiple properties (if they are a host).
+- A user can make multiple bookings.
+- A user can leave multiple reviews.
+- A user can make payments for their bookings.
+
+2. Properties
+Represents listings available for booking.
+Key Fields:
+- id: Unique identifier for the property.
+- title: Name or title of the listing.
+- description: Detailed information about the property.
+- location: Address or area where the property is located.
+- price_per_night: Cost of booking per night.
+
+Relationships:
+- A property belongs to one user (the host).
+- A property can have multiple bookings.
+- A property can receive multiple reviews.
+
+3. Bookings
+Represents reservations made by users for properties.
+Key Fields:
+- id: Unique identifier for the booking.
+- user_id: References the guest who made the booking.
+- property_id: References the property being booked.
+- check_in: Start date of the booking.
+- check_out: End date of the booking.
+
+Relationships:
+- A booking belongs to one user and one property.
+- A booking can be associated with one payment.
+
+4. Reviews
+Represents feedback and ratings left by users for properties.
+Key Fields:
+- id: Unique identifier for the review.
+- user_id: References the reviewer.
+- property_id: References the property being reviewed.
+- rating: Numerical rating (e.g., 1 to 5).
+- comment: Written feedback.
+
+Relationships:
+- A review belongs to one user and one property.
+- A property can have many reviews.
+
+5. Payments
+Represents transactions made for bookings.
+Key Fields:
+- id: Unique identifier for the payment.
+- booking_id: References the associated booking.
+- amount: Total amount paid.
+- payment_method: Type of payment used (e.g., credit card, PayPal).
+- status: Status of the payment (e.g., successful, pending, failed).
+
+Relationships:
+- A payment is linked to one booking.
+- A booking has one associated payment.
+
+Entity Relationship Summary
+- A User can own many Properties.
+- A User can make many Bookings.
+- A User can write many Reviews.
+- A Property can have many Bookings and Reviews.
+- A Booking is linked to one User, one Property, and one Payment.
+- A Review is linked to one User and one Property.
+- A Payment is linked to one Booking.
 
 Feature Breakdown:
 1. User Management: Implement a secure system for user registration, authentication, and profile management. It will enable users to register new users, authenticate, and manage user profiles.
