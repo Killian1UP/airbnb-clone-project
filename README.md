@@ -65,3 +65,22 @@ Implementation: All user input will be validated and sanitized on both frontend 
 
 7. Logging and Monitoring:
 Implementation: Security-related events (e.g., failed login attempts, unauthorized access) will be logged and monitored for early detection of suspicious activity. Alerts and audits will be set up where necessary. aProactive monitoring helps identify and mitigate threats early, reducing the risk of data breaches or service disruptions.
+
+CI/CD Pipeline:
+CI/CD stands for Continuous Integration and Continuous Deployment/Delivery. It is a set of automated practices used to streamline the development, testing, and deployment of software.
+- Continuous Integration (CI): Automatically tests and integrates code changes from multiple contributors into a shared repository, ensuring the application remains stable and error-free.
+- Continuous Deployment/Delivery (CD): Automatically deploys code to production or staging environments after passing tests, reducing manual steps and the risk of human error.
+
+Importance for This Project
+Implementing a CI/CD pipeline ensures that:
+- Code changes are automatically tested, reducing bugs and ensuring code quality.
+- Developers receive immediate feedback on integration issues.
+- New features and fixes are deployed quickly and reliably.
+- The project remains scalable and maintainable as it grows.
+
+Tools That Could Be Used
+- GitHub Actions: Automates testing, linting, and deployment workflows directly from the GitHub repository.
+- Docker: Ensures consistent environments across development, testing, and production by containerizing the application.
+- Docker Compose: Manages multi-container applications for local development and testing.
+- Heroku / Render / AWS / Azure (optional): Can be used as hosting platforms for deploying the backend API.
+- PostgreSQL & Redis Containers: Used in the pipeline for testing interactions with actual services.
