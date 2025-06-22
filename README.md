@@ -30,8 +30,7 @@ Team Roles:
 Database Design:
 The Airbnb Clone backend is built around several core entities. Each entity represents a table in the database, with defined relationships to ensure data consistency and integrity.
 
-1. Users
-Represents both guests and hosts who use the platform.
+1. Users: Represents both guests and hosts who use the platform.
 Key Fields:
 - id: Unique identifier for the user.
 - username: User's chosen username.
@@ -45,8 +44,7 @@ Relationships:
 - A user can leave multiple reviews.
 - A user can make payments for their bookings.
 
-2. Properties
-Represents listings available for booking.
+2. Properties: Represents listings available for booking.
 Key Fields:
 - id: Unique identifier for the property.
 - title: Name or title of the listing.
@@ -59,8 +57,7 @@ Relationships:
 - A property can have multiple bookings.
 - A property can receive multiple reviews.
 
-3. Bookings
-Represents reservations made by users for properties.
+3. Bookings: Represents reservations made by users for properties.
 Key Fields:
 - id: Unique identifier for the booking.
 - user_id: References the guest who made the booking.
@@ -72,8 +69,7 @@ Relationships:
 - A booking belongs to one user and one property.
 - A booking can be associated with one payment.
 
-4. Reviews
-Represents feedback and ratings left by users for properties.
+4. Reviews: Represents feedback and ratings left by users for properties.
 Key Fields:
 - id: Unique identifier for the review.
 - user_id: References the reviewer.
@@ -85,8 +81,7 @@ Relationships:
 - A review belongs to one user and one property.
 - A property can have many reviews.
 
-5. Payments
-Represents transactions made for bookings.
+5. Payments: Represents transactions made for bookings.
 Key Fields:
 - id: Unique identifier for the payment.
 - booking_id: References the associated booking.
@@ -98,7 +93,7 @@ Relationships:
 - A payment is linked to one booking.
 - A booking has one associated payment.
 
-Entity Relationship Summary
+Entity Relationship Summary:
 - A User can own many Properties.
 - A User can make many Bookings.
 - A User can write many Reviews.
