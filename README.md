@@ -32,80 +32,80 @@ The Airbnb Clone backend is built around several core entities. Each entity repr
 
 1. Users: Represents both guests and hosts who use the platform.
 
-Key Fields:
-- id: Unique identifier for the user.
-- username: User's chosen username.
-- email: User's email address.
-- password: Hashed password for authentication.
-- is_host: Boolean flag indicating if the user can list properties.
+ Key Fields:
+ - id: Unique identifier for the user.
+ - username: User's chosen username.
+ - email: User's email address.
+ - password: Hashed password for authentication.
+ - is_host: Boolean flag indicating if the user can list properties.
 
-Relationships:
-- A user can own multiple properties (if they are a host).
-- A user can make multiple bookings.
-- A user can leave multiple reviews.
-- A user can make payments for their bookings.
+ Relationships:
+ - A user can own multiple properties (if they are a host).
+ - A user can make multiple bookings.
+ - A user can leave multiple reviews.
+ - A user can make payments for their bookings.
 
 2. Properties: Represents listings available for booking.
 
-Key Fields:
-- id: Unique identifier for the property.
-- title: Name or title of the listing.
-- description: Detailed information about the property.
-- location: Address or area where the property is located.
-- price_per_night: Cost of booking per night.
+ Key Fields:
+ - id: Unique identifier for the property.
+ - title: Name or title of the listing.
+ - description: Detailed information about the property.
+ - location: Address or area where the property is located.
+ - price_per_night: Cost of booking per night.
 
-Relationships:
-- A property belongs to one user (the host).
-- A property can have multiple bookings.
-- A property can receive multiple reviews.
+ Relationships:
+ - A property belongs to one user (the host).
+ - A property can have multiple bookings.
+ - A property can receive multiple reviews.
 
 3. Bookings: Represents reservations made by users for properties.
 
-Key Fields:
-- id: Unique identifier for the booking.
-- user_id: References the guest who made the booking.
-- property_id: References the property being booked.
-- check_in: Start date of the booking.
-- check_out: End date of the booking.
+ Key Fields:
+ - id: Unique identifier for the booking.
+ - user_id: References the guest who made the booking.
+ - property_id: References the property being booked.
+ - check_in: Start date of the booking.
+ - check_out: End date of the booking.
 
-Relationships:
-- A booking belongs to one user and one property.
-- A booking can be associated with one payment.
+ Relationships:
+ - A booking belongs to one user and one property.
+ - A booking can be associated with one payment.
 
 4. Reviews: Represents feedback and ratings left by users for properties.
 
-Key Fields:
-- id: Unique identifier for the review.
-- user_id: References the reviewer.
-- property_id: References the property being reviewed.
-- rating: Numerical rating (e.g., 1 to 5).
-- comment: Written feedback.
+ Key Fields:
+ - id: Unique identifier for the review.
+ - user_id: References the reviewer.
+ - property_id: References the property being reviewed.
+ - rating: Numerical rating (e.g., 1 to 5).
+ - comment: Written feedback.
 
-Relationships:
-- A review belongs to one user and one property.
-- A property can have many reviews.
+ Relationships:
+ - A review belongs to one user and one property.
+ - A property can have many reviews.
 
 5. Payments: Represents transactions made for bookings.
 
-Key Fields:
-- id: Unique identifier for the payment.
-- booking_id: References the associated booking.
-- amount: Total amount paid.
-- payment_method: Type of payment used (e.g., credit card, PayPal).
-- status: Status of the payment (e.g., successful, pending, failed).
+ Key Fields:
+ - id: Unique identifier for the payment.
+ - booking_id: References the associated booking.
+ - amount: Total amount paid.
+ - payment_method: Type of payment used (e.g., credit card, PayPal).
+ - status: Status of the payment (e.g., successful, pending, failed).
 
-Relationships:
-- A payment is linked to one booking.
-- A booking has one associated payment.
+ Relationships:
+ - A payment is linked to one booking.
+ - A booking has one associated payment.
 
-Entity Relationship Summary:
-- A User can own many Properties.
-- A User can make many Bookings.
-- A User can write many Reviews.
-- A Property can have many Bookings and Reviews.
-- A Booking is linked to one User, one Property, and one Payment.
-- A Review is linked to one User and one Property.
-- A Payment is linked to one Booking.
+ Entity Relationship Summary:
+ - A User can own many Properties.
+ - A User can make many Bookings.
+ - A User can write many Reviews.
+ - A Property can have many Bookings and Reviews.
+ - A Booking is linked to one User, one Property, and one Payment.
+ - A Review is linked to one User and one Property.
+ - A Payment is linked to one Booking.
 
 Feature Breakdown:
 1. User Management: Implement a secure system for user registration, authentication, and profile management. It will enable users to register new users, authenticate, and manage user profiles.
