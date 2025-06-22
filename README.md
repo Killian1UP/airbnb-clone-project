@@ -41,3 +41,27 @@ Feature Breakdown:
 4. Payment Processing: Integrate a payment system to handle transactions and record payment details. It will enable the app to handle payment transactions related to bookings.
 5. Review System: Allow users to leave reviews and ratings for properties.
 6. Data Optimization: Ensure efficient data retrieval and storage through database optimizations. By the use of indexing and caching.
+
+API Security:
+Ensuring the security of the API is critical to protect user data, enable safe transactions, and maintain trust in the Airbnb Clone platform. The following security measures will be implemented to safeguard various components of the system:
+
+1. Authentication
+Implementation: We will implement token-based authentication using JWT (JSON Web Tokens) through Django REST Framework's djangorestframework-simplejwt package. This ensures that only authenticated users can access protected endpoints such as booking properties, managing listings, or making payments.
+
+2. Authorization:
+Implementation: Role-based access control (RBAC) will be applied to distinguish between different types of users (e.g., hosts and guests). Django REST Framework’s permission classes will be customized to enforce access control on sensitive operations (e.g., only property owners can edit or delete their listings). It ensures users can only access or modify resources they own or have permission to use. This prevents misuse or unauthorized access to data.
+
+3. Rate Limiting:
+Implementation: Rate limiting will be implemented using tools like Django Ratelimit or integrated through API gateways (e.g., NGINX or third-party services like Cloudflare) to prevent abuse. Rate limiting protects the API from brute-force attacks, DoS (Denial-of-Service) attacks, and ensures fair use of resources by all users.
+
+4. Data Encryption:
+Implementation: All data in transit will be encrypted using HTTPS (SSL/TLS). Sensitive data such as passwords will be hashed using secure algorithms like PBKDF2 (provided by Django by default). Encryption protects user credentials, personal data, and payment information from being intercepted by attackers during transmission.
+
+5. Secure Payment Processing:
+Implementation: Payments will be handled via integration with trusted third-party payment gateways (e.g., Stripe or PayPal), ensuring PCI compliance. Sensitive payment information will never be stored on our servers. Handling payments securely is essential to prevent fraud, data breaches, and to ensure user trust in the booking process.
+
+6. Input Validation & Sanitization:
+Implementation: All user input will be validated and sanitized on both frontend and backend. Django’s built-in protections against SQL injection and cross-site scripting (XSS) will be utilized. Improper input handling can lead to vulnerabilities such as XSS or SQL injection, potentially compromising the system or user data.
+
+7. Logging and Monitoring:
+Implementation: Security-related events (e.g., failed login attempts, unauthorized access) will be logged and monitored for early detection of suspicious activity. Alerts and audits will be set up where necessary. aProactive monitoring helps identify and mitigate threats early, reducing the risk of data breaches or service disruptions.
