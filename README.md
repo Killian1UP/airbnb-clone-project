@@ -31,6 +31,7 @@ Database Design:
 The Airbnb Clone backend is built around several core entities. Each entity represents a table in the database, with defined relationships to ensure data consistency and integrity.
 
 1. Users: Represents both guests and hosts who use the platform.
+
 Key Fields:
 - id: Unique identifier for the user.
 - username: User's chosen username.
@@ -45,6 +46,7 @@ Relationships:
 - A user can make payments for their bookings.
 
 2. Properties: Represents listings available for booking.
+
 Key Fields:
 - id: Unique identifier for the property.
 - title: Name or title of the listing.
@@ -58,6 +60,7 @@ Relationships:
 - A property can receive multiple reviews.
 
 3. Bookings: Represents reservations made by users for properties.
+
 Key Fields:
 - id: Unique identifier for the booking.
 - user_id: References the guest who made the booking.
@@ -70,6 +73,7 @@ Relationships:
 - A booking can be associated with one payment.
 
 4. Reviews: Represents feedback and ratings left by users for properties.
+
 Key Fields:
 - id: Unique identifier for the review.
 - user_id: References the reviewer.
@@ -82,6 +86,7 @@ Relationships:
 - A property can have many reviews.
 
 5. Payments: Represents transactions made for bookings.
+
 Key Fields:
 - id: Unique identifier for the payment.
 - booking_id: References the associated booking.
